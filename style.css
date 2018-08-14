@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    background-color: #bdbdbd;
+    padding: 20px;
+}
+
+.btn {
+    background: #f9f9f9;
+    border: 2px solid #DB9804;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.btn:hover {
+    background: #DB9804;
+    color: white;
+}
+
+.form-control {
+    padding: 10px;
+}
+
+.flex-desktop {
+    display: block;
+}
+
+@media screen and (min-width: 980px) {
+    .flex-desktop {
+        display: flex;
+        align-items: flex-start;
+    }
+}

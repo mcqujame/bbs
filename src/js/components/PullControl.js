@@ -30,6 +30,7 @@ class PullControl extends Component {
     handleClick(event) {
         event.preventDefault();
         let count = event.target.id.split('-')[1] || 1;
+        let attribute = '';
         while (count > 0) {
             const pullResult = this.pullGacha();
             this.props.addGachaPull({
@@ -55,6 +56,7 @@ class PullControl extends Component {
     }
 
     getChar() {
+        console.log( 'lkjh')
         const { characters } = this.props.currentGacha;
         return characters[Math.floor( Math.random() * characters.length )];
     }

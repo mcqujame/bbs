@@ -1,9 +1,11 @@
 import { ADD_GACHA, SET_GACHA, ADD_GACHA_PULL } from '../constants/action-types';
+import { characterList } from '../constants/characters';
 
 const initialState = {
     gachas: [],
     currentGacha: {},
-    pulls: []
+    pulls: [],
+    characters: characterList
 };
 
 const rootReducer = (state = initialState, action) => {

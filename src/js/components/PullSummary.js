@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
-    const { pulls } = state;
-    return { pulls };
+    console.log( 'here' );
+    const { pulls, characters } = state;
+    return { pulls, characters };
 }
 
 class PullSummary extends Component {
     render() {
         const { containerStyle, heading, blueHeading, imgContainer, imageStyle, frameImageStyle, charImageStyle, backgroundStyle, attributeStyle } = styles;
+        const { characters } = this.props;
         const count = this.props.pulls.length;
         let winnings = [];
         this.props.pulls.forEach( pull => {
@@ -17,7 +19,6 @@ class PullSummary extends Component {
                 winnings.push( pull );
             }
         });
-        console.log( 'bleep' );
         return (
             <div>
                 <div style={ containerStyle }>
@@ -33,12 +34,13 @@ class PullSummary extends Component {
                 <div style={imgContainer}>
                     {winnings.map(el => (
                         <div style={ imageStyle }>
-                            <img style={ attributeStyle } src='src/static/common/attribute-speed.png' />
+                            <img style={ attributeStyle } src={`src/static/common/attribute-${characters[el.result.replace(/ /g, '-')]
+}.png`} />
                             <img style={ frameImageStyle } src='src/static/common/character-window.png' />
                             <img style={ charImageStyle } src={`src/static/characters/${el.result.replace(/\s/g, '-').toLowerCase()}.png`} />
                             <img style={ backgroundStyle } src='src/static/common/character-background.png' />
                         </div>
-                    ))}
+                    ), this )}
                 </div>
             </div>
         );

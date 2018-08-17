@@ -2,9 +2,15 @@ const gachaImgPath = '/src/static/gachas';
 
 export const gachaList = [
     {
-        title: 'TYBW Kisuke Individual',
+        title: 'TT Unique Duos',
+        characters: [ 'TT Toshiro', 'TT Omaeda', 'TT Ikkaku' ],
+        image: `${gachaImgPath}/tt-unique-duos.jpg`,
+        rate: 3
+    },
+    {
+        title: 'Kanon Biraki Benihime Aratame',
         characters: [ 'TYBW Kisuke', 'Armor Yoruichi', 'TT Renji' ],
-        image: `${gachaImgPath}/the-future.jpg`,
+        image: `${gachaImgPath}/benihime-aratame.jpg`,
         rate: 3
     },
     {
